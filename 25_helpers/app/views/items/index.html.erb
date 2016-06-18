@@ -1,0 +1,26 @@
+<h1>Items</h1>
+<%= link_to "Sign in", new_user_session_path %>
+<%= link_to "Sign up", new_user_registration_path %>
+<% if @items.empty? %>
+  <b>No items in store</b>
+<% else %>
+<table>
+  <tr>
+    <th>item id</th>
+    <th>Name</th>
+    <th>Price</th>
+  </tr>
+
+<% @items.each do |i| %>
+
+  <tr>
+    <td><%= i.id %></td>
+    <td><%= link_to i.name, item_path(i) %></td>
+    <td><%= i.price %></td>
+    <!-- хелпер сгенирирует JS с методом DELETE а так GET будет-->
+    <td><%= link_to "Удалить линку", item_path(i), method: :delete, data: {confirm:"Точно удалить?"} %></td>
+    <td>Рейтинг: <%= i.votes_count %>, <%= link_to "+", upvote_item_path(i) %></td>
+  </tr>
+<% end %>
+<% end %>
+</table>

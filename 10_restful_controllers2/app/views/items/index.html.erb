@@ -1,0 +1,5 @@
+<% @items.each do |i| %>
+  <p><%= link_to i.name, "/items/#{i.id}" %></p>
+  <!--одно и тоже но автом меняется ресурс с помощью хелпер -->
+  <p><%= link_to i.name, item_path(i) %></p>
+<% end %>

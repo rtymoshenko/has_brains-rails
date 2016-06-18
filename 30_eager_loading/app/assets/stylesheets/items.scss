@@ -1,0 +1,8 @@
+// Place all the styles related to the items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.items { background: #b0e0e6; /* Цвет фона */  padding: 3px; /* Поля вокруг содержимого таблицы */
+    border: 1px solid black; /* Параметры рамки */ }
+
+th {border: 1px solid yellow;}
+td {border: 4px solid blue;}
